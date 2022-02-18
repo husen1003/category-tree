@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import AddCategorie from './components/AddCategorie';
-import Category from './components/Category';
+// import Category from './components/Category';
 import Tree from './components/Tree';
 
 function App() {

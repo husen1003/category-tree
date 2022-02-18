@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addCategory, addMainCategory } from '../redux/actions/categories';
+import { addCategory } from '../redux/actions/categories';
 
 const AddCategorie = () => {
     const dispatch = useDispatch();
@@ -11,8 +11,7 @@ const AddCategorie = () => {
         e.preventDefault();
         if (showTextBox) {
             console.log(value);
-            let id = new Date().getTime().toString();
-            dispatch(addCategory({ name: value, parentId: "0" }));
+            dispatch(addCategory({ name: value, parentId: '0' }));
             setValue('');
             setShowTextBox(false);
         } else {

@@ -1,7 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
 import {
-    addMainCategory,
-    updateCategories,
     addCategory,
     editCategory,
     removeCategory,
@@ -11,10 +9,7 @@ const initialState = {
     categories: {
         0: {
             id: '0',
-            name: 'Jungle',
-            type: 'Jungle',
-            value: '',
-            valueType: 'string',
+            name: 'Category',
             parentId: null,
             children: [],
         },
@@ -23,12 +18,6 @@ const initialState = {
 
 const categories = createReducer(initialState, (builder) => {
     builder
-        .addCase(updateCategories, (state, { payload }) => {
-            state.categories = payload;
-        })
-        .addCase(addMainCategory, (state, { payload }) => {
-            state.categories = [...state.categories, payload];
-        })
         .addCase(addCategory, (state, { payload }) => {
             let { name, parentId } = payload;
             let uniqueId = new Date().getTime().toString();
