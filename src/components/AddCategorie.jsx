@@ -25,22 +25,22 @@ const AddCategorie = () => {
                 onSubmit={handleSubmit}
                 className='flex flex-col w-6/12 justify-center items-center mx-auto my-10'
             >
+                <button
+                    className='bg-green-300 px-10 py-2 rounded-lg'
+                    type='submit'
+                >
+                    Add Category
+                </button>
                 {showTextBox && (
                     <input
                         ref={inputEl}
-                        className='border-4 mb-4 outline-none'
+                        className='border-2 mt-4 outline-none w-full p-1 text-base'
                         type={'text'}
                         value={value}
                         placeholder='Enter category...'
                         onChange={(e) => setValue(e.target.value)}
                     />
                 )}
-                <button
-                    className='bg-orange-500 px-10 py-2 rounded-lg'
-                    type='submit'
-                >
-                    {!showTextBox ? 'Add Category' : 'Submit'}
-                </button>
             </form>
         </div>
     );
